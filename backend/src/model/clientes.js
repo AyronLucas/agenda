@@ -17,8 +17,10 @@ class Cliente {
             senha: {
                 type: database.db.Sequelize.STRING
             },
-        
+            
         })
+        Atendimento.belongsTo(this.model, { foreignKey: 'clienteId' });
+        this.model.hasMany(Atendimento, { foreignKey: 'clienteId', onDelete: 'CASCADE' });//pra apagar tudo
     }
 }
 

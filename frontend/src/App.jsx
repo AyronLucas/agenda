@@ -26,6 +26,7 @@ function App() {
         <Route path='/clientes' element={<Clientes />} />
         <Route path='/create/cliente' element={<PageCreateCliente />} />
         <Route path='/update/cliente' element={<PageUpdateCliente/>} />
+        
         <Route path='/atendimentos' element={<Atendimentos />} />
         <Route path='/create/atendimento' element={<PageCreateAtendimento />} />
         <Route path='/update/atendimento' element={<PageUpdateAtendimento/>} />

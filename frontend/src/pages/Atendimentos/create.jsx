@@ -46,15 +46,22 @@ export default function PageCreateAtendimento() {
             <form>
                 <div>
                     <label>Dia: </label>
-                    <input type="text" name="dia" id='dia' value={atendimento.dia} onChange={handleChange} />
+                    <input type="date" name="dia" id="dia" value={atendimento.dia} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>hora: </label>
-                    <input type="text" name="hora" id='hora' value={atendimento.hora} onChange={handleChange} />
+                    <label>Hora: </label>
+                    <input type="time" name="hora" id="hora" value={atendimento.hora} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>valor: </label>
-                    <input type="text" name="valor" id='valor' value={atendimento.valor} onChange={handleChange} />
+                    <label>Valor: </label>
+                    <input type="text" name="valor" id="valor" value={atendimento.valor} onChange={handleChange} />
+                </div>
+                <div>
+                    <label>Concluido: </label>
+                    <select name="concluido" id="concluido" value={atendimento.concluido} onChange={handleChange}>
+                        <option value="true">Sim</option>
+                        <option value="false">Não</option>
+                    </select>
                 </div>
                 <div className="actions">
                     <button
