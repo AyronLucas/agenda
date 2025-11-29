@@ -1,6 +1,6 @@
 import express from 'express'
 import ControllerAtendimento from '../controller/atendimento.js'
-import authMiddleware from '../middleware/auth.js'
+
 
 const routerAtendimento = express.Router()
 

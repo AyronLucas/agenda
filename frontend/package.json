@@ -1,5 +1,5 @@
 {
-  "name": "exemplos-aula-jp-2025",
+  "name": "avaliacão-agenda",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.11.0",
+    "axios": "^1.13.2",
+    "express": "^5.1.0",
     "jwt-decode": "^4.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
