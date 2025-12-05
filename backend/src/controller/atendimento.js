@@ -1,16 +1,16 @@
 import ServiceAtendimento from '../service/atendimento.js'
 
 class ControllerAtendimento {
-    
+
     async FindAll(_, res) {
         try {
-            const atendimento = await ServiceAtendimento.FindAll()
+            const atendimentos = await ServiceAtendimento.FindAll()
             res.status(200).send({ atendimentos })
         } catch (error) {
             res.status(500).send({ error: error.message })
         }
     }
-    
+
     async FindOne(req, res) {
         try {
             const id = req.params.id || req.headers?.atendimento?.id
@@ -31,7 +31,7 @@ class ControllerAtendimento {
             res.status(500).send({ error: error.message })
         }
     }
-    
+
     Update(req, res) {
         try {
             const id = req.params.id || req.headers?.dia?.id
@@ -42,7 +42,7 @@ class ControllerAtendimento {
             res.status(500).send({ error: error.message })
         }
     }
-    
+
     async Delete(req, res) {
         try {
             const id = req.params.id || req.headers?.atendimento?.id

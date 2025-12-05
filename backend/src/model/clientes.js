@@ -1,4 +1,5 @@
 import database from "../config/database.js"
+import Atendimento from "./atendimento.js"
 
 class Cliente {
     constructor() {

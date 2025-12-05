@@ -1,8 +1,5 @@
 import Atendimento from '../model/atendimento.js'
-import jwt from 'jsonwebtoken'
 
-const JWT_SEGREDO = "M3uS3gr3d0"
-const SALT = 10 // 12
 
 class ServiceAtendimento {
 
@@ -14,8 +11,6 @@ class ServiceAtendimento {
         if (!id) {
             throw new Error("Favor informar o ID")
         }
-
-        // preciso procurar um usuario no banco
         const atendimento = await Atendimento.findByPk(id)
 
         if (!atendimento) {
@@ -48,25 +43,7 @@ class ServiceAtendimento {
         oldAtendimento.destroy()
     }
 
-    async Login(dia, hora) {
-        if(!dia || !hora) {
-            throw new Error("Dia ou hora inválidos.")
-        }
-
-        const atendimento = await Atendimento.findOne({ where: { dia } })
-
-        if (
-            !atendimento
-        ) {
-            throw new Error("Dia ou Hora inválidos.")
-        }
-
-        return jwt.sign(
-            { id: atendimento.id, dia: atendimento.nome},
-            JWT_SEGREDO,
-            { expiresIn: 60 * 60 }
-        )
-    }
+    
 }
 
 export default new ServiceAtendimento()

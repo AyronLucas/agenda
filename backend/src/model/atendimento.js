@@ -3,7 +3,7 @@ import database from "../config/database.js"
 class Atendimento {
     constructor() {
         this.model = database.db.define('atendimentos', {
-                        id: {
+            id: {
                 type: database.db.Sequelize.INTEGER,
                 primaryKey: true,
                 autoIncrement: true
